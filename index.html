@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="icon" href="./favicon.ico">
+    <script type="text/javascript" src="./main.js" defer></script>
+    <title>MathLine - Multiplication Game</title>
+</head>
+<body>
+    <header>
+        <h1>MathLine</h1>
+    </header>
+    <main>
+        <section class="main-section">
+            <section class="indicators">
+                <div class="indicators__time-remaining">
+                    Time remaining: <span data-time-remaining></span>s
+                </div>
+                <div class="indicators__answer-correctness">
+                    <div data-correct>You got it right!</div>
+                    <div data-incorrect>That's Incorrect.</div>
+                </div>
+                <div class="indicators__score">
+                    Score: <span data-score>0</span>
+                </div>
+            </section>
+            <section class="quest-container">
+                <p class="quest-container__statement"></p>
+                <div class="quest-container__message">
+                    <div data-countdown>3</div>
+                    <div data-message-over>
+                        <p>Game Over!</p>
+                        <p>You scored <span data-score></span> points.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="interactive">
+                <ul class="interactive__answer-options">
+                    <li data-answer-id="1"></li>
+                    <li data-answer-id="2"></li>
+                    <li data-answer-id="3"></li>
+                    <li data-answer-id="4"></li>
+                </ul>
+                <section class="interactive__game-options">
+                    <div data-start></div>
+                    <div data-stop></div>
+                </section>
+            </section>
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>
