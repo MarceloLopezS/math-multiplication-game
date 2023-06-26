@@ -191,11 +191,25 @@ main {
     background-color: var(--clr-accent-400);
 }
 
+.indicators__time-remaining span[data-time-remaining] {
+    visibility: hidden;
+    display: inline-block;
+    min-width: 3ch;
+    text-align: center;
+}
+
 .indicators__score {
     grid-area: score;
     justify-self: end;
     color: var(--clr-neutral-900);
     background-color: var(--clr-secondary-400);
+}
+
+.indicators__score span[data-score] {
+    visibility: hidden;
+    display: inline-block;
+    min-width: 3ch;
+    text-align: center;
 }
 
 .indicators__answer-correctness {
@@ -232,14 +246,25 @@ main {
     margin-block: var(--elements-gap);
 }
 
+.quest-container > * {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
 .quest-container__statement {
     visibility: hidden;
-    position: absolute;
     font-size: var(--fs-statement);
 }
 
 .quest-container__message {
+    display: grid;
+    place-items: center;
     text-align: center;
+}
+
+.quest-container__message > * {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
 }
 
 .quest-container__message div[data-start-message] {
@@ -248,13 +273,11 @@ main {
 
 .quest-container__message div[data-countdown] {
     visibility: hidden;
-    position: absolute;
     font-size: var(--fs-countdown);
 }
 
 .quest-container__message div[data-gameover-message] {
     visibility: hidden;
-    position: absolute;
     text-align: center;
     font-size: var(--fs-quest-message);
 }
