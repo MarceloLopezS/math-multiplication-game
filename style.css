@@ -224,8 +224,10 @@ main {
 }
 
 .indicators__answer-correctness div {
-    color: var(--clr-neutral-900);
     visibility: hidden;
+    color: var(--clr-neutral-900);
+    opacity: 0;
+    transition: opacity 300ms ease;
 }
 
 .indicators__answer-correctness div[data-correct] {
@@ -234,6 +236,10 @@ main {
 
 .indicators__answer-correctness div[data-incorrect] {
     background-color: var(--clr-secondary-400);
+}
+
+.indicators__answer-correctness div[data-show] {
+    opacity: 1;
 }
 
 .quest-container {

@@ -19,7 +19,7 @@ const dom_stopButton = dom_mainSection.querySelector('.interactive__game-options
 /* GLOBAL VARIABLES */
 
 
-let playing, timeRemaining, score, countdownInterval, timeRemainingInterval, statementAnswer;
+let playing, timeRemaining, score, countdownInterval, timeRemainingInterval, indicatorTimeout, statementAnswer;
 let alreadyGeneratedAnswers = [];
 
 
@@ -28,7 +28,6 @@ let alreadyGeneratedAnswers = [];
 
 dom_startButton.addEventListener('click', gameStartCountdown);
 dom_stopButton.addEventListener('click', gameOver);
-dom_answerOptions.forEach(option => option.addEventListener('click', handleAnswerClick));
 
 
 /* FUNCTIONS */
@@ -66,8 +65,17 @@ function hideStateIndicators(...indicatorElements) {
 
 // Alternate correctness indicator
 function alternateCorrectnessIndicator(indicatorElementToShow, indicatorElementToHide) {
-    indicatorElementToShow.style.visibility = 'visible';
-    indicatorElementToHide.style.visibility = 'hidden';
+    if (indicatorElementToShow.style.visibility === '' || indicatorElementToShow.style.visibility === 'hidden') {
+        indicatorElementToShow.style.visibility = 'visible'
+    }
+    clearTimeout(indicatorTimeout);
+    // Animated appearance for a determinated time
+    indicatorElementToShow.setAttribute('data-show', '');
+    indicatorTimeout = setTimeout(() => {
+        indicatorElementToShow.removeAttribute('data-show')
+    }, 1500)
+    // Ensure the other indicator remains hidden so only one shows
+    indicatorElementToHide.removeAttribute('data-show');
 }
 
 // Display message in the quest container
@@ -211,6 +219,7 @@ function gameStartCountdown() {
             updateStateIndicator(dom_timeIndicator, timeRemaining, true);
             handleGameTimer();
             promptMultiplicationStatement();
+            dom_answerOptions.forEach(option => option.addEventListener('click', handleAnswerClick));
         }
     }, 1000)
 }
@@ -236,6 +245,7 @@ function gameOver() {
     playing = false;
     clearInterval(countdownInterval);
     clearInterval(timeRemainingInterval);
+    dom_answerOptions.forEach(option => option.removeEventListener('click', handleAnswerClick));
     hideStateIndicators(dom_correctAnswerIndicator, dom_incorrectAnswerIndicator);
     clearAnswerOptions();
     displayGameOverMessage();
