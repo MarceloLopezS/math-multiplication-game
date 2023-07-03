@@ -1,4 +1,4 @@
-# MATHLINE
+# MATHTIME
 
 This is a simple Math Multiplication game developed with HTML, CSS and Vanilla JavaScript. It generates multiplication statements and answer options for the user to interact with. The game has a one minute timer and keeps track of the user’s score, which also determines the game difficulty.
 
