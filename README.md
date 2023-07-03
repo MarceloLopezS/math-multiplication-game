@@ -4,7 +4,7 @@ This is a simple Math Multiplication game developed with HTML, CSS and Vanilla J
 
 The app aims to provide a user-friendly interface and experience on both desktop and mobile devices. This is achieved by using the most recent CSS technologies along with HTML, while up-to-date JavaScript takes care of the main functionality.
 
-The JavaScript code is the core part of the app and is responsible for the game logic. The approach is driven towards Functional Programming and it's centered towards clean, readable code with good practices. This code is divided in three sections for legibility: DOM Elements, global variables and functions.
+The JavaScript code is the core part of the app and is responsible for the game logic. The approach is driven towards Functional Programming and it's centered in clean, readable code with good practices. This code is divided in three sections for legibility: DOM Elements, global variables and functions.
 
 As the name implies, the DOM Elements section stores the elements that will be manipulated to achieve the game's visual functionallity.
 
@@ -48,4 +48,4 @@ The functions section contains all the necessary functions for the game to work.
 
 - `gameStartCountdown()`: This function starts a countdown timer for the game to begin. It checks if the game is already playing and, if not, calls `initGame()` to initialize the game, sets `playing` to `true`, updates the score indicator element and time indicator element using `updateStateIndicator()` to the updated values, hides any quest messages using `hideQuestMessages()`, and displays a countdown using `displayQuestMessage()`. It then sets an interval to decrement a `count` variable every second and update the `textContent` of the countdown message element. When `count` reaches 0, it clears the interval, hides the countdown using `hideQuestMessages()`, updates the time indicator element using `updateStateIndicator()`, calls `handleGameTimer()` to start the game timer, calls `promptMultiplicationStatement()` to generate the first multiplication statement and answer options, and adds an event listener to each answer option element to handle clicks on answer options using `handleAnswerClick()`.
 
-This code is a mainly a use example of CSS for responsiveness across devices and JavaScript for interactivity by implementing DOM manipulation, Event Listeners, Intervals and Timeouts using the latest ECMAScript features such as template strings, default parameters, arrow functions, object destructuring, spread syntax, conditionals using ternary operator, etc.
+This code is mainly a use example of CSS for responsiveness across devices and JavaScript for interactivity by implementing DOM manipulation, Event Listeners, Intervals and Timeouts using the latest ECMAScript features such as template strings, default parameters, arrow functions, object destructuring, spread syntax, conditionals using ternary operator, etc.
