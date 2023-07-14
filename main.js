@@ -1,3 +1,5 @@
+(function() {
+
 /* DOM ELEMENTS */
 
 
@@ -16,7 +18,7 @@ const dom_startButton = dom_mainSection.querySelector('.interactive__game-option
 const dom_stopButton = dom_mainSection.querySelector('.interactive__game-options button[data-stop]');
 
 
-/* GLOBAL VARIABLES */
+/* VARIABLES */
 
 
 let playing, timeRemaining, score, countdownInterval, timeRemainingInterval, indicatorTimeout, statementAnswer;
@@ -262,3 +264,5 @@ function handleGameTimer() {
         }
     }, 1000)
 }
+
+}())
