@@ -4,13 +4,15 @@ This is a simple Math Multiplication game developed with HTML, CSS and Vanilla J
 
 The app aims to provide a user-friendly interface and experience on both desktop and mobile devices. This is achieved by using the most recent CSS technologies along with HTML, while up-to-date JavaScript takes care of the main functionality.
 
-The JavaScript code is the core part of the app and is responsible for the game logic. The approach is driven towards Functional Programming and it's centered in clean, readable code with good practices. This code is divided in three sections for legibility: DOM Elements, global variables and functions.
+The JavaScript code is the core part of the app and is responsible for the game logic. The approach is driven towards Functional Programming and it's centered in clean, readable code with good practices. It's divided in four sections: DOM Elements, Variables, Main and Functions.
 
 As the name implies, the DOM Elements section stores the elements that will be manipulated to achieve the game's visual functionallity.
 
-The global variables section initializes the variables in the highest scope so they can then be accessed and modified inside different functions.
+The Variables section initializes the variables in the highest scope so they can then be accessed and modified inside different functions.
 
-The functions section contains all the necessary functions for the game to work. These include:
+The Main section sets the event listeners for the main controls, which are the Start and Stop button.
+
+The Functions section contains all the necessary functions for the game to work. These include:
 
 - `initGame()`: This function initializes the game by setting the values of the global variables to their initial state.
 
